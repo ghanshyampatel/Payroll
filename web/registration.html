@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Payroll</title>
+        <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="CustomStyles.css" rel="stylesheet" type="text/css">
+
+        <script>
+            function validateForm()
+            {
+                var rn = document.forms["ResultForm"]["rno"].value;
+                if (rn == "" || rn <= 0)
+                {
+                    alert("Please Enter a valid Roll Number !!!");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-payroll-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>  
+                    <a class="navbar-brand" href="index.html">Payroll</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-payroll-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><button class="btn btn-danger navbar-btn" data-target="#adminLoginModal" data-toggle="modal">Admin Login</button></li>
+
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="modal fade" id="adminLoginModal" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Admin Login</h4>                                                   
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="adminUsername">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="adminUsername">
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPassword">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password" name="adminPassword">
+                            </div>
+                            <button class="btn btn-primary">Login</button>
+                        </form>
+                    </div>                                               
+                </div>
+            </div>
+        </div>
+
+
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-3 col-lg-offset-4">
+                        <form action="addEmployee" > 
+                            <h3> Create your account </h3> <br>
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter First Name" name="fname">
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Last Name" name="lname">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" placeholder="Enter Email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password" name="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="DOB">DOB</label>
+                                <input type="date" class="form-control" placeholder="Enter DOB" name="dob">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Basic_Sal</label>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="basicPay">
+                            </div>
+                            <input type="submit" name="create" value="Create" class="btn btn-primary">
+                            <a href="index.html" class="btn btn-primary">Login</a>
+                            
+                        </form>
+                    </div>
+
+                </div>                   
+            </div>
+            
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="Bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
